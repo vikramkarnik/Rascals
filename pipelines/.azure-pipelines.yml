@@ -55,7 +55,7 @@ steps:
 - task: AzureWebApp@1
   displayName: 'Deploy to Azure Web App'
   inputs:
-    azureSubscription: 'YOUR_AZURE_SUBSCRIPTION'
+    azureSubscription: 'AZURE_SUBSCRIPTION'
     appType: 'webApp'
-    appName: 'YOUR_APP_SERVICE_NAME'
+    appName: 'APP_SERVICE_NAME'
     package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
