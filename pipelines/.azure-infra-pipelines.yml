@@ -7,7 +7,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  azureSubscription: 'YOUR_AZURE_SUBSCRIPTION' # Update with your service connection name
+  azureSubscription: 'rascals' # Update with your service connection name
   location: 'uksouth'                      # Default location, can be overridden
   env: 'dev'                                 # Environment name, can be overridden
   rgName: 'rascals-bicep-rg'                     # Resource group name, can be overridden
