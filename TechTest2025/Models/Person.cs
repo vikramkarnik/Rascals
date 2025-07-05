@@ -10,11 +10,11 @@ namespace TechTest2025.Models
 
         [Required]
         [StringLength(100, MinimumLength = 2)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         [Required]
         [StringLength(200)]
-        public string Address { get; set; }
+        public string Address { get; set; } = string.Empty;
 
 
         [Required]

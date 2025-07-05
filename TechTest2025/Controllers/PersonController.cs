@@ -19,6 +19,10 @@
         public IActionResult GetAll()
         {
             var persons = _personService.GetAllPersons().ToList();
+            if (persons == null || !persons.Any())
+            {
+                return NotFound("No persons found.");
+            }
             return Ok(persons);
         }
     }

@@ -1,9 +1,14 @@
+using TechTest2025;
 using TechTest2025.Repositories;
 using TechTest2025.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 // Dependency injection
 var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data/people.txt");
 builder.Services.AddSingleton<IPersonRepository>(new PersonRepository(filePath));
