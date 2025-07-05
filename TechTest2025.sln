@@ -11,6 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTest2025.Tests", "TechT
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{84DB60F6-9A34-4E99-9193-F6B6F9528672}"
 	ProjectSection(SolutionItems) = preProject
+		pipelines\.azure-infra-pipelines.yml = pipelines\.azure-infra-pipelines.yml
 		pipelines\.azure-pipelines.yml = pipelines\.azure-pipelines.yml
 		infra\appServices.bicep = infra\appServices.bicep
 		infra\keyVault.bicep = infra\keyVault.bicep

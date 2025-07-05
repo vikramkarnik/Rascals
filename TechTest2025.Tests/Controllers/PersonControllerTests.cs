@@ -1,11 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using TechTest2025.Controllers;
 using TechTest2025.Models;
 using TechTest2025.Services;
-using Xunit;
 
 namespace TechTest2025.Tests.Controllers
 {

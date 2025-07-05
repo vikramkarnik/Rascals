@@ -1,10 +1,7 @@
-using System.Collections.Generic;
-using System.Linq;
 using Moq;
 using TechTest2025.Models;
 using TechTest2025.Repositories;
 using TechTest2025.Services;
-using Xunit;
 
 namespace TechTest2025.Tests.Services
 {
