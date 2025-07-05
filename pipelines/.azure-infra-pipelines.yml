@@ -4,7 +4,7 @@ trigger:
       - master
 
 pool:
-  name: 'Azure Pipelines'
+  vmImage: 'localhost'
 
 variables:
   azureSubscription: 'rascals' # Update with your service connection name
@@ -18,12 +18,12 @@ steps:
   displayName: 'Deploy Bicep Infrastructure'
   inputs:
     azureSubscription: '$(azureSubscription)'
-    scriptType: 'bash'
+    scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az --version
-      echo "Deploying Bicep template: $(bicepFile)"
-      az deployment sub create \
-        --location $(location) \
-        --template-file $(bicepFile) \
+      Write-Host "Deploying Bicep template: $(bicepFile)"
+      az deployment sub create `
+        --location $(location) `
+        --template-file $(bicepFile) `
         --parameters env=$(env) rgName=$(rgName) location=$(location)
