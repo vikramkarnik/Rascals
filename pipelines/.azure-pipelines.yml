@@ -4,7 +4,7 @@ trigger:
       - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: 'localhost'
 
 variables:
   buildConfiguration: 'Release'
@@ -55,7 +55,7 @@ steps:
 - task: AzureWebApp@1
   displayName: 'Deploy to Azure Web App'
   inputs:
-    azureSubscription: 'AZURE_SUBSCRIPTION'
+    azureSubscription: 'rascals'
     appType: 'webApp'
-    appName: 'APP_SERVICE_NAME'
+    appName: 'dev-rascals-backend-app'
     package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
