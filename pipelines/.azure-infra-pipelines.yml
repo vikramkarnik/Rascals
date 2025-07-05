@@ -1,0 +1,29 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  azureSubscription: 'YOUR_AZURE_SUBSCRIPTION' # Update with your service connection name
+  location: 'uksouth'                      # Default location, can be overridden
+  env: 'dev'                                 # Environment name, can be overridden
+  rgName: 'rascals-bicep-rg'                     # Resource group name, can be overridden
+  bicepFile: 'infra/main.bicep'               # Path to your main Bicep file
+
+steps:
+- task: AzureCLI@2
+  displayName: 'Deploy Bicep Infrastructure'
+  inputs:
+    azureSubscription: '$(azureSubscription)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az --version
+      echo "Deploying Bicep template: $(bicepFile)"
+      az deployment sub create \
+        --location $(location) \
+        --template-file $(bicepFile) \
+        --parameters env=$(env) rgName=$(rgName) location=$(location)

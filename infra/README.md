@@ -26,8 +26,6 @@ az deployment sub create \
 
 - `location` (default: eastus) - The Azure region for resource deployment
 - `rgName` (default: rg-app-services) - The name of the resource group
-- `qaLocation` (default: eastus) - The Azure region for the QA environment
-- `qaRgName` (default: rg-app-services-qa) - The name of the QA resource group
 
 ## Common Issues and Solutions
 
@@ -50,7 +48,7 @@ module appServiceModule 'appServices.bicep' = {
 ## Example Deployment Command
 
 ```bash
-az deployment sub create --name AppServicesDeployment --location westeurope --template-file main.bicep --parameters location=westeurope rgName=dev-nho-rg env=qa
+az deployment sub create --name AppServicesDeployment --location uksouth --template-file main.bicep --parameters location=westeurope rgName=dev-rascals-rg env=dev
 ```
 
 

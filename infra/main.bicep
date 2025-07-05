@@ -1,7 +1,7 @@
 targetScope = 'subscription'
 param env string
 
-param location string = 'westeurope'
+param location string = 'uksouth'
 param rgName string
 
 // Deploy resource group
@@ -34,7 +34,7 @@ module keyVaultModule 'keyVault.bicep' = {
   params: {
     location: location
     backendPrincipalId: appServicesModule.outputs.backendPrincipalId
-    keyVaultName: '${env}-nho-keyvault-app'
+    keyVaultName: '${env}-rascals-keyvault-app'
   }
   dependsOn: [
     resourceGroupModule
@@ -43,6 +43,5 @@ module keyVaultModule 'keyVault.bicep' = {
  
 
 output backendUrl string = appServicesModule.outputs.backendUrl
-output frontendUrl string = appServicesModule.outputs.frontendUrl
 output backendStaticIp string = appServicesModule.outputs.backendStaticIp
 output keyVaultName string = keyVaultModule.outputs.keyVaultName

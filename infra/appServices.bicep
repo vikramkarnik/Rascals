@@ -74,19 +74,9 @@ resource backendServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   }
 }
 
-// Frontend App Service Plan (Windows)
-resource frontendServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
-  name: 'asp-frontend'
-  location: location
-  sku: {
-    name: 'D1'
-    tier: 'Development'
-  }
-}
-
 // Backend App Service (.NET 8)
 resource backendApp 'Microsoft.Web/sites@2022-03-01' = {
-  name: '${env}-nho-backend-app'
+  name: '${env}-rascals-backend-app'
   location: location
   identity: {
     type: 'SystemAssigned'
@@ -105,21 +95,7 @@ resource backendApp 'Microsoft.Web/sites@2022-03-01' = {
   }
 }
 
-// Frontend App Service (Node.js)
-resource frontendApp 'Microsoft.Web/sites@2022-03-01' = {
-  name: '${env}-nho-frontend-app'
-  location: location
-  properties: {
-    serverFarmId: frontendServicePlan.id
-    siteConfig: {
-      nodeVersion: '~18'  // Using Node.js 18 LTS for Windows
-      http20Enabled: true
-      minTlsVersion: '1.2'
-    }
-  }
-}
 
 output backendUrl string = 'https://${backendApp.properties.defaultHostName}'
-output frontendUrl string = 'https://${frontendApp.properties.defaultHostName}'
 output backendStaticIp string = backendPublicIP.properties.ipAddress
 output backendPrincipalId string = backendApp.identity.principalId
