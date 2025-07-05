@@ -4,7 +4,7 @@ trigger:
       - master
 
 pool:
-  vmImage: 'localhost'
+  name: 'localhost'
 
 variables:
   azureSubscription: 'rascals' # Update with your service connection name
