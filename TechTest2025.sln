@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		infra\resourceGroup.bicep = infra\resourceGroup.bicep
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechTest2025.Tests.Integration", "TechTest2025.Tests.Integration\TechTest2025.Tests.Integration.csproj", "{CF683F78-B112-4F31-9D7C-F01E307BDC3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,16 +36,16 @@ Global
 		{9C2F54D9-E60B-47EC-83FE-75A863222F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C2F54D9-E60B-47EC-83FE-75A863222F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C2F54D9-E60B-47EC-83FE-75A863222F9B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EAF06112-7341-4FD0-8A79-3037D94F37EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EAF06112-7341-4FD0-8A79-3037D94F37EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EAF06112-7341-4FD0-8A79-3037D94F37EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EAF06112-7341-4FD0-8A79-3037D94F37EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF683F78-B112-4F31-9D7C-F01E307BDC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF683F78-B112-4F31-9D7C-F01E307BDC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF683F78-B112-4F31-9D7C-F01E307BDC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF683F78-B112-4F31-9D7C-F01E307BDC3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9C2F54D9-E60B-47EC-83FE-75A863222F9B} = {76CECC9E-C117-4A34-99FA-3ABE410DC081}
-		{EAF06112-7341-4FD0-8A79-3037D94F37EB} = {76CECC9E-C117-4A34-99FA-3ABE410DC081}
+		{CF683F78-B112-4F31-9D7C-F01E307BDC3C} = {76CECC9E-C117-4A34-99FA-3ABE410DC081}
 	EndGlobalSection
 EndGlobal

@@ -4,10 +4,10 @@ trigger:
       - master
 
 pool:
-  name: 'localhost'
+  vmImage: 'ubuntu-latest'
 
 variables:
-  azureSubscription: 'rascals' # Update with your service connection name
+  azureSubscription: 'AZURE_SERVICE_CONNECTION' # Update with your service connection name
   location: 'uksouth'                      # Default location, can be overridden
   env: 'dev'                                 # Environment name, can be overridden
   rgName: 'rascals-bicep-rg'                     # Resource group name, can be overridden
@@ -18,12 +18,12 @@ steps:
   displayName: 'Deploy Bicep Infrastructure'
   inputs:
     azureSubscription: '$(azureSubscription)'
-    scriptType: 'ps'
+    scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az --version
-      Write-Host "Deploying Bicep template: $(bicepFile)"
-      az deployment sub create `
-        --location $(location) `
-        --template-file $(bicepFile) `
+      echo "Deploying Bicep template: $(bicepFile)"
+      az deployment sub create \
+        --location $(location) \
+        --template-file $(bicepFile) \
         --parameters env=$(env) rgName=$(rgName) location=$(location)

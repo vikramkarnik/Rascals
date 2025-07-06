@@ -4,7 +4,7 @@ trigger:
       - master
 
 pool:
-  name: 'localhost'
+  vmImage: 'ubuntu-latest'
 
 variables:
   buildConfiguration: 'Release'
@@ -55,7 +55,7 @@ steps:
 - task: AzureWebApp@1
   displayName: 'Deploy to Azure Web App'
   inputs:
-    azureSubscription: 'rascals'
+    azureSubscription: 'AZURE_SERVICE_CONNECTION' # Update with your service connection name
     appType: 'webApp'
-    appName: 'dev-rascals-backend-app'
+    appName: 'dev-rascals-backend-app' # Update with your app name from bicep file
     package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
